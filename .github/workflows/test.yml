@@ -15,21 +15,21 @@ jobs:
       contents: read
     steps:
       - name: Setup timezone
-        uses: zcong1993/setup-timezone@v1.1.1
+        uses: zcong1993/setup-timezone@v2.0.0
         with:
           timezone: Europe/Berlin
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
       - name: Configure AWS credentials for SES_Github_Monitoring
         uses: aws-actions/configure-aws-credentials@v1
         with:
           role-to-assume: arn:aws:iam::921405131417:role/SES_Github_Monitoring
           aws-region: eu-central-1
       - name: Set up Python 3.x
-        uses: actions/setup-python@v2
+        uses: actions/setup-python@v4
         with:
-          python-version: '3.8.3'
+          python-version: '3.8'
       - name: Cache pip
-        uses: actions/cache@v2
+        uses: actions/cache@v3
         with:
           path: ~/.cache/pip
           key: ${{ runner.os }}-pip-${{ hashFiles('requirements.txt') }}
