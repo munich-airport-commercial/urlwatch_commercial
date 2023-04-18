@@ -161,3 +161,13 @@ name: "AWS suppression list sicherheitsparken"
 command: "chmod a+x ./bin/ses_suppression_check.sh && \
           ./bin/ses_suppression_check.sh -e sicherheitsparken@munich-airport.de"
 ---
+# POI Hub Moderation scheduling - geplante Veröffentlichung 
+name: "POI Hub Moderation scheduling - geplante Veröffentlichung"
+url: "https://poi-hub.munich-airport.de/api/schedule/run?token=cockpit_token"
+method: POST
+headers:
+   Content-type: application/json
+data: '{ "range": 60 }'
+filter:
+   - jq: '.[] | "https://poi-hub.munich-airport.de/collections/entries/" + .schedule_data._collection + "/" +  ._id + " " + .old_status + "->" + .new_status'
+---
