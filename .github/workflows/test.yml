@@ -45,7 +45,7 @@ jobs:
           sed -i "s/aws_ses_password/${{ secrets.AWS_SES_PASSWORD }}/" urlwatch.yaml
       - name: Set secret cockpit
         run: |
-          sed -i "s/cockpit_token/${{ secrets.COCKPIT_TOKEN }}/" url_test.yaml
+          sed -i "s/cockpit_token/${{ secrets.COCKPIT_TOKEN }}/" urls_test.yaml
       - name: Run urlwatch
         run: |
           urlwatch --config=urlwatch.yaml --urls=urls_test.yaml --test-filter 4
