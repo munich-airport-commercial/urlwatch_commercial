@@ -32,4 +32,6 @@ method: POST
 headers:
    Content-type: application/json
 data: '{ "range": 60 }'
+filter:
+   - jq: '.[] | "https://poi-hub-test.munich-airport.de/collections/entries/" + .schedule_data._collection + "/" +  ._id + " " + .old_status + "->" + .new_status'
 ---
