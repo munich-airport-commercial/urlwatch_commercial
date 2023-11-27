@@ -156,6 +156,10 @@ command: "python3 ./bin/cert_check.py -n paymentpage.getneteurope.com"
 name: "Cert of JIRA"
 command: "python3 ./bin/cert_check.py -n jira.munich-airport.de"
 ---
+# Cert of WBT
+name: "Cert of WBT"
+command: "python3 ./bin/cert_check.py -n wbt.munich-airport.de"
+---
 # AWS suppresion list sicherheitsparken (AeroParker)
 name: "AWS suppression list sicherheitsparken"
 command: "chmod a+x ./bin/ses_suppression_check.sh && \
