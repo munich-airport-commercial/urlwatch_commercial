@@ -175,3 +175,15 @@ data: '{ "range": 60 }'
 filter:
    - jq: '.[] | "https://poi-hub.munich-airport.de/collections/entry/" + .schedule_data._collection + "/" +  ._id + " " + .old_status + "->" + .new_status'
 ---
+---
+# Consent Anbieterliste - Homepage 
+name: "Consent Anbieterliste - Homepage"
+url: "https://delivery.consentmanager.net/delivery/vendorlist.php?cdid=ca5ef998a87e&api=json"
+headers:
+   Content-type: application/json
+filter:
+   - jq: '.[] | .id + " " + .name + " purposes: " + (.purposenames | tostring)'
+   - re.sub:
+        pattern: '\\"'
+        repl: '"'
+---
