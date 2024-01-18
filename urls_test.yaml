@@ -43,6 +43,6 @@ headers:
 filter:
    - jq: '.[] | .id + " " + .name + " purposes: " + (.purposenames | tostring)'
    - re.sub:
-        pattern: '\"'
+        pattern: '\\"'
         repl: '"'
 ---
