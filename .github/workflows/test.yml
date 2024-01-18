@@ -48,4 +48,4 @@ jobs:
           sed -i "s/cockpit_token/${{ secrets.COCKPIT_TOKEN }}/" urls_test.yaml
       - name: Run urlwatch
         run: |
-          urlwatch --config=urlwatch.yaml --urls=urls_test.yaml --test-filter 5
+          urlwatch --config=urlwatch.yaml --urls=urls_test.yaml --test-filter 6
