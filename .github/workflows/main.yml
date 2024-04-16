@@ -20,19 +20,19 @@ jobs:
       - name: Setup timezone
         uses: MathRobin/timezone-action@v1.1
         with:
-          timezone: Europe/Berlin
+          timezoneLinux: 'Europe/Berlin'
       - uses: actions/checkout@v4
       - name: Configure AWS credentials for SES_Github_Monitoring
-        uses: aws-actions/configure-aws-credentials@v2
+        uses: aws-actions/configure-aws-credentials@v4
         with:
           role-to-assume: arn:aws:iam::921405131417:role/SES_Github_Monitoring
           aws-region: eu-central-1
       - name: Set up Python 3.x
-        uses: actions/setup-python@v4
+        uses: actions/setup-python@v5
         with:
           python-version: '3.8'
       - name: Cache pip
-        uses: actions/cache@v3
+        uses: actions/cache@v4
         with:
           path: ${{ env.pythonLocation }}
           key: ${{ env.pythonLocation }}-${{ runner.os }}-pip-${{ hashFiles('requirements.txt') }}
@@ -43,7 +43,7 @@ jobs:
       - name: Download cached db
         # only for first run needed
         # continue-on-error: true
-        uses: dawidd6/action-download-artifact@v2
+        uses: dawidd6/action-download-artifact@v3
         with:
           workflow: main.yml
           workflow_conclusion: success
