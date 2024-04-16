@@ -18,10 +18,10 @@ jobs:
       contents: read
     steps:
       - name: Setup timezone
-        uses: zcong1993/setup-timezone@v2.0.0
+        uses: MathRobin/timezone-action@v1.1
         with:
           timezone: Europe/Berlin
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
       - name: Configure AWS credentials for SES_Github_Monitoring
         uses: aws-actions/configure-aws-credentials@v2
         with:
