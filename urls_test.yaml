@@ -3,21 +3,10 @@ name: "AWS suppression list parken"
 command: "chmod a+x ./bin/ses_suppression_check.sh && \
           ./bin/ses_suppression_check.sh -e online.parken@munich-airport.de"
 ---
-# Monitoring status wifi.munich-airport.de
-name: "Wifi Munich Airport"
-url: "https://wifi.munich-airport.de/welcome/home.html"
-ssl_no_verify: true
+# Monitoring new SW of IRIS
+name: "AirportReiseService IRIS-SW"
+url: "https://download-irisplus.tui.de/"
 filter:
-   - css: 
-      selector: desktop-link
-   - html2text
----
-# Monitoring status wifi.munich-airport.de
-name: "Passngr Website"
-url: "https://www.passngr.de/de/"
-filter:
-   - xpath:
-      path: '//div[@class=video__description]//a[1]'
    - html2text
 ---
 # AWS suppresion list sicherheitsparken (AeroParker)
