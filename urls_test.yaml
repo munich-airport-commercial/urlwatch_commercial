@@ -5,7 +5,7 @@ command: "chmod a+x ./bin/ses_suppression_check.sh && \
 ---
 # Monitoring new SW of IRIS
 name: "AirportReiseService IRIS-SW"
-url: "https://download-irisplus.tui.de/"
+navigate: "https://download-irisplus.tui.de/"
 filter:
    - xpath: /html/body/app-root/app-start/div
    - html2text
