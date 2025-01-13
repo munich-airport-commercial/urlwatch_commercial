@@ -3,6 +3,10 @@ name: "AWS suppression list parken"
 command: "chmod a+x ./bin/ses_suppression_check.sh && \
           ./bin/ses_suppression_check.sh -e online.parken@munich-airport.de"
 ---
+# Prüfung von bistroportal
+name: "BistroPortal SW"
+command: "wget --spider https://bistroportal.secure-booking.de/MSI/getNewMSI.php?auth=1&App=bistroportal"
+---
 # Monitoring new SW of IRIS
 name: "AirportReiseService IRIS-SW"
 navigate: "https://download-irisplus.tui.de/"
