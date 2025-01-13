@@ -5,7 +5,7 @@ command: "chmod a+x ./bin/ses_suppression_check.sh && \
 ---
 # Prüfung von bistroportal
 name: "BistroPortal SW"
-command: "wget --spider \"https://bistroportal.secure-booking.de/MSI/getNewMSI.php?auth=1&App=bistroportal\""
+command: "wget --spider \"https://bistroportal.secure-booking.de/MSI/getNewMSI.php?auth=1&App=bistroportal\" -O -"
 ---
 # Monitoring new SW of IRIS
 name: "AirportReiseService IRIS-SW"
