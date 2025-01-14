@@ -190,6 +190,8 @@ filter:
 name: "AirportReiseService BistroPortal SW"
 command: "wget --spider  --no-check-certificate \"https://bistroportal.secure-booking.de/MSI/getNewMSI.php?auth=1&App=bistroportal\" -O -"
 stderr: stdout
+filter:
+   - re.sub: '(?m)(^--(\d|-| |:)*--  )'
 ---
 # Monitoring new SW of IRIS
 name: "AirportReiseService IRIS-SW"
