@@ -183,3 +183,18 @@ filter:
         pattern: '\\"'
         repl: '"'
 ---
+#########
+## SW der Reisestelle
+##########
+# Prüfung von bistroportal
+name: "AirportReiseService BistroPortal SW"
+command: "wget --spider  --no-check-certificate \"https://bistroportal.secure-booking.de/MSI/getNewMSI.php?auth=1&App=bistroportal\" -O -"
+stderr: stdout
+---
+# Monitoring new SW of IRIS
+name: "AirportReiseService IRIS-SW"
+navigate: "https://download-irisplus.tui.de/"
+filter:
+   - xpath: /html/body/app-root/app-start/div
+   - html2text
+---
