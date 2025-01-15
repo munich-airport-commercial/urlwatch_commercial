@@ -196,6 +196,7 @@ filter:
 # Monitoring new SW of IRIS
 name: "AirportReiseService IRIS-SW"
 navigate: "https://download-irisplus.tui.de/"
+wait_for: //app-start/*/div/div[contains(@class, 'row')][1]
 filter:
    - xpath: /html/body/app-root/app-start/div
    - html2text
