@@ -57,14 +57,6 @@ command: "python3 ./bin/cert_check.py -n portal-fra.passngr.de"
 name: "Cert of POI-Hub FRA (Test)"
 command: "python3 ./bin/cert_check.py -n portal-fra-test.passngr.de" 
 ---
-# Cert of POI-Hub HAM
-name: "Cert of POI-Hub HAM"
-command: "python3 ./bin/cert_check.py -n portal-ham.passngr.de" 
----
-# Cert of POI-Hub HAM (Test)
-name: "Cert of POI-Hub HAM (Test)"
-command: "python3 ./bin/cert_check.py -n portal-ham-test.passngr.de"
----
 # Changes nginx
 name: "Changes nginx"
 url: "http://nginx.org/en/CHANGES"
