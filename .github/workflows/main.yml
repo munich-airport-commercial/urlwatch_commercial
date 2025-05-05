@@ -43,7 +43,7 @@ jobs:
           playwright install chromium
       - name: Download cached db
         # only for first run needed
-        continue-on-error: true
+        # continue-on-error: true
         uses: dawidd6/action-download-artifact@v6
         with:
           workflow: main.yml
