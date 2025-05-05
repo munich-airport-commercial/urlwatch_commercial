@@ -38,8 +38,7 @@ jobs:
           key: ${{ env.pythonLocation }}-${{ runner.os }}-pip-${{ hashFiles('requirements.txt') }}
       - name: Install dependencies
         run: |
-          # disable the update and install
-          # python -m pip install --upgrade pip wheel
+          python -m pip install --upgrade pip wheel
           pip install --upgrade pyOpenSSL html2text urlwatch jq playwright
           playwright install chromium
       - name: Download cached db
