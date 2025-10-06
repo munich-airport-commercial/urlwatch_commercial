@@ -2,21 +2,6 @@
 name: "monthly watchdog"
 command: "date +\"%Y-%m\""
 ---
-# Site of Getnet
-name: "Status Getnet"
-url: "https://api.getneteurope.com/engine/rest/ping"
-filter:
-  - html2text
-  - strip
-  - re.sub:                                                                                 
-     pattern: '(?m)^\s*'
-     repl: ''                                                                           
-  - grepi: "^.*Status$"
-  - grepi: "^.*Service$"
-  - grepi: "^.*Result$"
-  - grepi: "^Engine Clock.*$"
-  - grepi: "^.*0000.*$"
----
 # Cert of SOA (Oracle CRM)
 name: "Cert of SOA (Oracle CRM)"
 command: "python3 ./bin/cert_check.py -n soa-crm.munich-airport.de"
@@ -123,14 +108,6 @@ command: "python3 ./bin/cert_check.py -n api-dev.munich-airport.de"
 # Cert of Homepage WLAN (Dev)
 name: "Cert of Homepage WLAN (Dev)"
 command: "python3 ./bin/cert_check.py -n wifi-dev.munich-airport.de"
----
-# Cert of Getnet API
-name: "Cert of Getnet API"
-command: "python3 ./bin/cert_check.py -n api.getneteurope.com"
----
-# Cert of Getnet PaymentPage
-name: "Cert of Getnet PaymentPage"
-command: "python3 ./bin/cert_check.py -n paymentpage.getneteurope.com"
 ---
 # Cert of JIRA
 name: "Cert of JIRA"
