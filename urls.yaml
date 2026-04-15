@@ -117,9 +117,9 @@ command: "python3 ./bin/cert_check.py -n wifi-dev.munich-airport.de"
 name: "Cert of JIRA"
 command: "python3 ./bin/cert_check.py -n jira.munich-airport.de"
 ---
-# Cert of WBT
-name: "Cert of WBT"
-command: "python3 ./bin/cert_check.py -n wbt.munich-airport.de"
+# Cert of API Entw Passngr
+name: "Cert of API Entw Passngr"
+command: "python3 ./bin/cert_check.py -n api-entw.passngr.de" 
 ---
 # AWS suppresion list sicherheitsparken (AeroParker)
 name: "AWS suppression list sicherheitsparken"
